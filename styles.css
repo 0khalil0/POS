@@ -47,15 +47,23 @@ select {
   background: white;
 }
 
-/* Glass Card */
 .glass-card {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;       /* less padding */
   margin-top: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;        /* less vertical gap */
+  max-width: 360px;    /* fix max width to your desired size */
+  margin-left: auto;
+  margin-right: auto;  /* center horizontally */
 }
+
 
 /* Message */
 #message {
@@ -109,4 +117,15 @@ td {
 
 th {
   background-color: #f0f0f0;
+}
+video, 
+canvas.drawingBuffer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;         /* fit container width */
+  height: auto;        /* keep aspect ratio */
+  max-width: 100%;     /* don't exceed container */
+  border-radius: 15px;
+  object-fit: cover;   /* or contain if you prefer */
 }
